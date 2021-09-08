@@ -1,0 +1,21 @@
+train:
+  template_path: 
+  template_id: 
+  pairs_path: 
+  pairs_id: 
+  relations_path: 
+  relations_id: 
+dev:
+  template_path: 
+  template_id: 
+  pairs_path: 
+  pairs_id: 
+  relations_path: 
+  relations_id: 
+test:
+  template_path: 
+  template_id: 
+  pairs_path: 
+  pairs_id: 
+  relations_path: 
+  relations_id: 

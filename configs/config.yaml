@@ -1,0 +1,7 @@
+defaults:
+  - data: id
+  - model: adaptive-prompt_prefix-lstm_bert-base-cased
+debug: False
+notes: null
+train: False
+device: ???

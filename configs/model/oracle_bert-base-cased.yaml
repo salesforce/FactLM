@@ -1,0 +1,5 @@
+type: "oracle"
+ptuning:
+    model_path: "configs/model/p-tuning_bert-base-cased.yaml"
+# id: "${.relclf.model.id}_${.relclf.data.train.id}_${.ptuning.model}"
+seed: 871 # this will get over-written

@@ -1,0 +1,21 @@
+name: "roberta-large"
+type: "adapter"
+adapter:
+  lstm_dropout: 0.0
+  name: "rewrite-trans"
+  # prefix_len: 3
+# template: "(3, 3, 3)"
+early_stop: 20
+finetune: False
+lr: 1e-5
+seed: 34
+decay_rate: 0.98
+weight_decay: 0.0005
+batch_size: 64
+distributed: False
+world_size: 2
+rank: -1
+pseudo_token: '[PROMPT]'
+id: "mn-${.name}_an-${.adapter.name}_sd-${.seed}_bs-${.batch_size}_lr-${.lr}_dr-${.decay_rate}_wd-${.weight_decay}_do-${.adapter.lstm_dropout}"
+out_path_prefix: "out/${.type}"
+max_epochs: 5

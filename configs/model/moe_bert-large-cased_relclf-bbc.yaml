@@ -1,0 +1,8 @@
+type: "moe"
+relclf:
+    model_path: "configs/model/relclf_bert-base-cased.yaml"
+    data_path: "configs/data/id.yaml"
+ptuning:
+    model_path: "configs/model/p-tuning_bert-large-cased.yaml"
+# id: "${.relclf.model.id}_${.relclf.data.train.id}_${.ptuning.model}"
+seed: 871 # this will get over-written

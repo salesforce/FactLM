@@ -1,0 +1,26 @@
+train:
+  id: "trtid-${.template_id}_trpid-${.pairs_id}_trrid-${.relations_id}_vcb-${..vocab}" # for model checkpointing
+  template_path: data/templates/relations_id.json
+  template_id: id
+  pairs_path: data/LAMA/fact-retrieval/original/
+  pairs_id: LAMA
+  relations_path: data/LAMA/relations_subsets/all_relations.txt
+  relations_id: all
+dev:
+  id: "dvtid-${.template_id}_dvpid-${.pairs_id}_dvrid-${.relations_id}_vcb-${..vocab}" # for model checkpointing
+  template_path: data/templates/relations_id.json
+  template_id: id
+  pairs_path: data/LAMA/fact-retrieval/original/
+  pairs_id: LAMA
+  relations_path: data/LAMA/relations_subsets/all_relations.txt
+  relations_id: all
+test:
+  id: "tstid-${.template_id}_tspid-${.pairs_id}_tsrid-${.relations_id}_vcb-${..vocab}" # for results
+  template_path: data/templates/relations_id.json
+  template_id: id
+  pairs_path: data/LANKA/bert_data/wiki_uni/
+  pairs_id: OOD_obj
+  relations_path: data/LAMA/relations_subsets/all_relations.txt
+  relations_id: all
+vocab: shared
+vocab_path: data/LAMA/29k-vocab.json

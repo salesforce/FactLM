@@ -1,0 +1,26 @@
+# use_original_template: True
+# relation_id: "data/LAMA/relations_subsets/easy_split_1.txt"
+# use_adaptive_prompt: True
+# prompt_encoder_name: prefix_lstm
+# out_dir: "out/LAMA/prompt_model/mn-${.model_name}_tp-original_pen-${.prompt_encoder_name}_reltr-${basename:${.relation_id}}_relev-${basename:${.relation_id}}_tmptr-lama_tmpev-lama_lr-${.lr}_bz-${.batch_size}_sd-${.seed}_vcb-${.vocab_strategy}"
+name: "bert-base-cased"
+type: "adapter"
+adapter:
+  lstm_dropout: 0.0
+  name: "rewrite-lstm-so"
+  prefix_len: 3
+# template: "(3, 3, 3)"
+early_stop: 20
+finetune: False
+lr: 1e-5
+seed: 34
+decay_rate: 0.98
+weight_decay: 0.0005
+batch_size: 128
+distributed: False
+world_size: 2
+rank: -1
+pseudo_token: '[PROMPT]'
+id: "mn-${.name}_an-${.adapter.name}_apl-${.adapter.prefix_len}_sd-${.seed}_bs-${.batch_size}_lr-${.lr}_dr-${.decay_rate}_wd-${.weight_decay}_do-${.adapter.lstm_dropout}"
+out_path_prefix: "out/${.type}"
+max_epochs: 5

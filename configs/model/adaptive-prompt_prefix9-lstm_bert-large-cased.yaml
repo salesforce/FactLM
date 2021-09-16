@@ -15,7 +15,7 @@ lr: 1e-5
 seed: 34
 decay_rate: 0.98
 weight_decay: 0.0005
-batch_size: 128
+batch_size: 64
 distributed: False
 world_size: 2
 rank: -1

@@ -1,0 +1,36 @@
+# pre-parsing args
+# relation_id: P1001
+# model_name: "bert-base-cased"
+model:
+  model_id: "bert-base-cased"
+  template: "(3, 3, 3)"
+  early_stop: 20
+  lr: 1e-5
+  seed: 34
+  decay_rate: 0.98
+  weight_decay: 0.0005
+  batch_size: 8
+  lstm_dropout: 0.0
+  distributed: False
+  world_size: 2
+  rank: -1
+
+vocab_strategy: shared
+# distributed training
+# lama configuration
+# only_evaluate: False
+# use_original_template: False -> should be implicit in "model type"
+# use_lm_finetune: False
+# ood_test_relations: null
+relation_templates: "data/LAMA/relations.jsonl"
+# # adaptive prompts
+# use_adaptive_prompt: False
+# prompt_encoder_name: "identity"
+# # relation classifier
+# relclf_model_name: null
+# relclf_do_train: False
+# relclf_prompt_path: "out/LAMA/prompt_model/bert-base-cased/search/bert-base-cased_shared_template_(3, 3, 3)_fixed_seed_34_None" # where pretrained prompts are stored
+# relclf_use_gold_relations: False
+# the rest
+# notes: null
+# debug: False

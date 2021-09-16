@@ -1,5 +1,10 @@
+"""
+Copyright (c) 2021, salesforce.com, inc.
+All rights reserved.
+SPDX-License-Identifier: BSD-3-Clause
+For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+"""
 from collections import Counter
-# from hydra import compose, initialize
 import hydra
 from hydra.utils import to_absolute_path
 import json
@@ -20,8 +25,6 @@ def resolve_paths(conf):
         resolve_paths(sub_conf)
 
 def get_save_path(cfg):
-    #return join(self.args.out_dir, 'prompt_model', self.args.model_name, 'search', self.get_task_name(loading_ckpt),
-    #            "_".join(self.args.relation_id))
     out_dir = f"{cfg.model.id}-{cfg.data.train.id}"
     sub_dir = cfg.data.test.id
     if cfg.debug:
@@ -46,7 +49,6 @@ def main(cfg: DictConfig) -> None:
     model = cfg.model.name
     predictions_file = get_save_path(cfg)
     print(predictions_file)
-    # predictions_file = "out/adapter/mn-bert-base-cased_an-prefix-lstm_apl-3_sd-34_bs-128_lr-1e-05_dr-0.98_wd-0.0005_do-0.0_ep_5-trtid-id_trpid-LAMA_trrid-all_vcb-shared_sm-10000/tstid-id_tspid-LAMA_tsrid-all_vcb-shared_sm-10000/predictions.json"
     with open(predictions_file) as predf:
         predictions = json.load(predf)
 
